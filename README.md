@@ -1,24 +1,46 @@
 # OpenFGA
 
-TODO: Delete this and the text below, and describe your gem
+This is a Ruby client for the OpenFGA API.
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/OpenFGA`. To experiment with that code, run `bin/console` for an interactive prompt.
+OpenFGA is a scalable open source authorization system for developers that allows implementing authorization for any kind of application and smoothly evolve as complexity increases over time.
+
+More information about OpenFGA can be found at [https://openfga.dev](https://openfga.dev).
 
 ## Installation
 
-TODO: Replace `UPDATE_WITH_YOUR_GEM_NAME_IMMEDIATELY_AFTER_RELEASE_TO_RUBYGEMS_ORG` with your gem name right after releasing it to RubyGems.org. Please do not do it earlier due to security reasons. Alternatively, replace this section with instructions to install your gem from git if you don't plan to release to RubyGems.org.
-
 Install the gem and add to the application's Gemfile by executing:
 
-    $ bundle add UPDATE_WITH_YOUR_GEM_NAME_IMMEDIATELY_AFTER_RELEASE_TO_RUBYGEMS_ORG
+```sh
+bundle add openfga
+```
 
 If bundler is not being used to manage dependencies, install the gem by executing:
 
-    $ gem install UPDATE_WITH_YOUR_GEM_NAME_IMMEDIATELY_AFTER_RELEASE_TO_RUBYGEMS_ORG
+```sh
+gem install openfga
+```
 
 ## Usage
 
-TODO: Write usage instructions here
+```rb
+require 'openfga'
+
+openfga = OpenFGA::Client.new(endpoint: 'http://localhost:8180')
+```
+
+### Create a store
+
+```rb
+openfga.store.create(name: 'store1', description: 'store1 description')
+```
+
+## Configuration
+
+```rb
+OpenFGA.configure do |config|
+  config.endpoint = 'http://localhost:8180'
+end
+```
 
 ## Development
 
