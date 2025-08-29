@@ -1,3 +1,6 @@
+> [!WARNING]
+> This repository is archived and no longer maintained. 
+
 # OpenFGA
 
 This is a Ruby client for the OpenFGA API.
